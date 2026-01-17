@@ -5,8 +5,8 @@ const ASSET_MANAGER = new AssetManager();
 const GAME_WIDTH = 1344;
 const GAME_HEIGHT = 768;
 
-ASSET_MANAGER.queueDownload("./res/map/Background.png");
-ASSET_MANAGER.queueDownload("./res/Player/Soldier1_Spritesheet.png");
+ASSET_MANAGER.queueDownload("/res/map/Background.png");
+ASSET_MANAGER.queueDownload("/res/Player/Soldier1_Spritesheet.png");
 
 
 ASSET_MANAGER.downloadAll(() => {
