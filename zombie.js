@@ -1,11 +1,12 @@
-class Soldier {
+class Zombie {
     constructor(game) {
         this.game = game;
-        this.x = 0;
-        this.y = 0;
+
+        this.x = 100
+        this.y = 100
         this.speed = 100
 
-        // Soldier state variables
+        // zombie state variables
         this.action = 0; // 0 = Idle, 1 = walk, 2 = sprint, 3 = meelee, 4 = accurate fire, 5 = rapid fire, 6 = reload, 7 = hurt, 8 = grenade, 9 = explosion, 10 = dead
         this.facing = 0; // 0 = right, 1 = left
         this.dead = false;
@@ -14,7 +15,7 @@ class Soldier {
         this.velocity = {x:0, y:0};
         this.fallAcc = 562.5
 
-        // the soldier's animations
+        // the zombie's animations
         this.animations = [];
         this.loadAnimations();
 

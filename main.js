@@ -11,6 +11,7 @@ ASSET_MANAGER.downloadAll(() => {
 	ctx.imageSmoothingEnabled = false;
 
 	gameEngine.addEntity(new Soldier(gameEngine));
+	gameEngine.addEntity(new Zombie(gameEngine));
 
 	gameEngine.init(ctx);
 
