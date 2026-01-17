@@ -13,7 +13,7 @@ class GameEngine {
         this.click = null;
         this.mouse = null;
         this.wheel = null;
-        this.keys = {};
+        this.keys = { };
 
         // Options and the Details
         this.options = options || {
@@ -72,8 +72,8 @@ class GameEngine {
             this.rightclick = getXandY(e);
         });
 
-        this.ctx.canvas.addEventListener("keydown", event => this.keys[event.key] = true);
-        this.ctx.canvas.addEventListener("keyup", event => this.keys[event.key] = false);
+        this.ctx.canvas.addEventListener("keydown", event => this.keys[event.code] = true);
+        this.ctx.canvas.addEventListener("keyup", event => this.keys[event.code] = false);
     };
 
     addEntity(entity) {
@@ -97,7 +97,7 @@ class GameEngine {
             let entity = this.entities[i];
 
             if (!entity.removeFromWorld) {
-                entity.update();
+                entity.update(this.keys);
             }
         }
 
