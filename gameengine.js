@@ -56,6 +56,22 @@ class GameEngine {
             this.click = getXandY(e);
         });
 
+        this.ctx.canvas.addEventListener("mousedown", e => {
+            switch (e.button) {
+                case 0: this.entities[0].mouseClicked = true;
+                        break;
+                case 2: this.entities[0].mouseHeld = true;
+            }
+        });
+
+        this.ctx.canvas.addEventListener("mouseup", e => {
+            switch (e.button) {
+                case 0: this.entities[0].mouseClicked = false;
+                        break;
+                case 2: this.entities[0].mouseHeld = false;
+            }
+        });
+
         this.ctx.canvas.addEventListener("wheel", e => {
             if (this.options.debugging) {
                 console.log("WHEEL", getXandY(e), e.wheelDelta);
@@ -107,6 +123,10 @@ class GameEngine {
             }
         }
     };
+
+    updateAmmo(ammo) {
+        document.getElementById("ammo").innerText = ammo;
+    }
 
     loop() {
         this.clockTick = this.timer.tick();

@@ -7,10 +7,12 @@ class Animator {
     };
 
     drawFrame(tick, ctx, x, y) {
+        ctx.imageSmoothingEnabled = false;
         this.elapsedTime += tick;
         if(this.elapsedTime > this.totalTime) this.elapsedTime -= this.totalTime;
         const frame = this.currentFrame();
 
+        
         if (this.flip) {
             ctx.save();
             ctx.scale(-1, 1);
@@ -27,7 +29,6 @@ class Animator {
             x, y,
             this.width*2, this.height*2);
         }
-        
     };
 
     currentFrame() {
