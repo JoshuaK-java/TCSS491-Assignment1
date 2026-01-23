@@ -135,7 +135,7 @@ class Soldier {
                 this.inAnim = true;
                 this.timer = Date.now();
 
-                const grenade = new Grenade(this.game, this.facing, this.x, this.y);
+                const grenade = new Grenade(this.game, this.facing, this.x, this.y, this.scale);
                 this.game.addEntity(grenade);
             }
             if (this.mouseClicked) {

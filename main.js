@@ -39,6 +39,7 @@ ASSET_MANAGER.downloadAll(() => {
 		ctx.setTransform(scale, 0, 0, scale, 0, 0);
 		player.x = DEFAULT_X;
 		player.y = DEFAULT_Y;
+		player.scale = scale;
 		//ctx.resetTransform();
 	}
 
