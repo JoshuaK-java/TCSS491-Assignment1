@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Game Project Title Goes Here</title>
+    <title>Animation Assignment - Joshua Kalcha</title>
   
     <script type="text/javascript" defer src="./assetmanager.js"></script>
     <script type="text/javascript" defer src="./timer.js"></script>
@@ -23,20 +23,53 @@
             background: black;
         }
 
+        #gameLayout {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
         canvas {
+            flex: 1;
             display: block;
             background-image: url("./res/map/Background.png");
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: left;
+        }
+
+        #uiPanel {
+            width: 200px;
+            padding: 16px;
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+            border-left: 2px solid #222;
         }
     </style>
 </head>
 <body>
-    <canvas 
-    id="gameWorld" 
-    tabindex="0" 
-    autofocus
-    ></canvas>
+    <div id="gameLayout">
+        <canvas 
+            id="gameWorld" 
+            tabindex="0" 
+            autofocus
+        ></canvas>
+
+        <div id="uiPanel">
+            <h2>Controls</h2>
+
+            <div class="ui-item">Ammo: <span id=ammo>25</span></div>
+
+            <hr>
+            <p><b>Walk:</b> A / D</p>
+            <p><b>Run:</b> Shift + A / D</p>
+            <p><b>Shoot:</b> Left / Right mouse click</p>
+            <p><b>Reload:</b> R</p>
+            <p><b>Grenade:</b> G</p>
+            <p><b>melee:</b> Q</p>
+        </div>
+    </div>
 </body>
 </html>

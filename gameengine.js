@@ -124,6 +124,10 @@ class GameEngine {
         }
     };
 
+    updateAmmo(ammo) {
+        document.getElementById("ammo").innerText = ammo;
+    }
+
     loop() {
         this.clockTick = this.timer.tick();
         this.update();

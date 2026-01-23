@@ -15,15 +15,15 @@ ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
 	ctx.imageSmoothingEnabled = false;
-	var scale = 0;
+
 	
+
 	// entities
 	player = new Soldier(gameEngine, DEFAULT_X, DEFAULT_Y);
 	gameEngine.addEntity(player);
-	//gameEngine.addEntity(new Zombie(gameEngine));
 
 	function resizeCanvas() {
-		scale = Math.min(
+		 const scale = Math.min(
 			window.innerWidth / GAME_WIDTH,
 			window.innerHeight / GAME_HEIGHT
 		);
@@ -46,7 +46,9 @@ ASSET_MANAGER.downloadAll(() => {
 	resizeCanvas();
 	// canvas.width = GAME_WIDTH;
 	// canvas.height = GAME_HEIGHT;
-	
+	ctx.fillStyle = "white";
+	ctx.font = "20px Arial";
+	ctx.fillText("hellow world", 1300, 500);
 
 	gameEngine.init(ctx);
 

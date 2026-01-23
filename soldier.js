@@ -90,6 +90,7 @@ class Soldier {
             this.inAnim = true;
             this.timer = Date.now();
             this.magSize = 25;
+            this.game.updateAmmo(this.magSize);
             return;
         }
             
@@ -125,6 +126,8 @@ class Soldier {
                 this.endTime = 2600;
                 this.inAnim = true;
                 this.timer = Date.now();
+                this.magSize = 25;
+                this.game.updateAmmo(this.magSize);
             }
             if (keys["KeyG"]) {
                 this.action = 8; // grenade
@@ -141,6 +144,7 @@ class Soldier {
                 this.inAnim = true;
                 this.timer = Date.now();
                 this.magSize -= 1;
+                this.game.updateAmmo(this.magSize);
             }
             if (this.mouseHeld) {
                 this.action = 4; // rapid fire
@@ -148,6 +152,7 @@ class Soldier {
                 this.inAnim = true;
                 this.timer = Date.now();
                 this.magSize -= 1;
+                this.game.updateAmmo(this.magSize);
             }
         }
         
