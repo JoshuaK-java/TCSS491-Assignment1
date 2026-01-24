@@ -1,9 +1,8 @@
 class Grenade {
-    constructor(game, facing, x, y, scale) {
+    constructor(game, facing, x, y) {
         this.game = game;
         this.y = y - 90;
-        this.speed = scale * 100 / scale;
-        this.scale = scale;
+        this.speed = 100;
 
         // make sure grenade spawns in hand
         if (facing === 0) {
@@ -25,8 +24,6 @@ class Grenade {
         // dk what to use this for yet
         this.velocity = {x:Math.cos(Math.PI/4) * this.speed, y:Math.sin(Math.PI/4) * this.speed * -1};
         this.fallAcc = 0.033;
-        console.log(this.fallAcc);
-        console.log(this.scale);
 
         // the grenade's animations
         this.animations = [];
