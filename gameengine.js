@@ -97,8 +97,10 @@ class GameEngine {
     };
 
     draw() {
+        //this.ctx.setTransform(1, 0, 0, 1, 0, 0);
         // Clear the whole canvas with transparent color (rgba(0, 0, 0, 0))
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
+        //this.ctx.setTransform(this.scale || 1, 0, 0, this.scale || 1, 0, 0);
 
         // Draw latest things first
         for (let i = this.entities.length - 1; i >= 0; i--) {
